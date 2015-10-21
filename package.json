@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/Michaelwilsonm/node-gym-recipe#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "browserify": "^11.2.0",
+    "cookie-parser": "latest",
     "ejs": "latest",
     "express": "^4.13.3",
-    "morgan": "^1.6.1",
-    "cookie-parser": "latest",
-    "express-session": "latest"
+    "express-session": "latest",
+    "mongoose": "^4.1.12",
+    "morgan": "^1.6.1"
   }
 }
