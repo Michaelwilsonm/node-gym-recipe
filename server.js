@@ -1,8 +1,16 @@
 var http = require('http');
+var express = require('express')
+var app = express()
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(3000, "localhost");
+var morgan = require('morgan')
+var browserify = require('browserify')
 
-console.log('Server running at http://localhost:3000/');
+app.use(morgan('dev'))
+
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+
+app.listen(3000)
+
+console.log("server running on port :" + 3000)

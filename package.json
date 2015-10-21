@@ -1,0 +1,26 @@
+{
+  "name": "gym-recipe",
+  "version": "1.0.0",
+  "description": "an app where you can share your gym workouts and vote good workouts up",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michaelwilsonm/node-gym-recipe.git"
+  },
+  "author": "Michael Wilson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michaelwilsonm/node-gym-recipe/issues"
+  },
+  "homepage": "https://github.com/Michaelwilsonm/node-gym-recipe#readme",
+  "dependencies": {
+    "browserify": "^11.2.0",
+    "ejs": "latest",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  }
+}
