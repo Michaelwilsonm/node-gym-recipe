@@ -11,6 +11,8 @@ var browserify = require('browserify')
 var mongoose = require('mongoose')
 var configDB = require('./config/database.js')
 var bodyParser = require('body-parser')
+var passport = require('passport')
+var flash = require('connect-flash')
 
 mongoose.connect(configDB.url)
 
@@ -21,9 +23,13 @@ app.use(session({secret: 'keyboard cat',
                 saveUninitialized: true,
                 resave: true}))
 
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
+
 app.set('view engine', 'ejs')
 
-require('./app/routes.js')(app)
+require('./app/routes.js')(app, passport)
 
 
 app.listen(3000)
