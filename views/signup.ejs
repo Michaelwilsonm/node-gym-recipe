@@ -5,6 +5,9 @@
   </head>
   <body>
     <script src="bundle.js"></script>
+    <% if (message.length > 0) { %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% } %>
     <form action="/signup" method="post">
       <input type="text" name="email">
       <br>
@@ -13,3 +16,11 @@
     </form>
   </body>
 </html>
+
+
+
+
+
+
+
+

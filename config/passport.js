@@ -1,7 +1,7 @@
 var LocalStrategy = require('passport-local').Strategy
 var User = require('../app/model/user')
 
-module.export = function(passport){
+module.exports = function(passport) {
   passport.serializeUser(function(user, done){
     done(null, user.id)
   })
@@ -19,25 +19,38 @@ module.export = function(passport){
   },
   function(req, email, password, done){
     process.nextTick(function(){
-      User.findOne({'local.email': email}, function(err, user){
+      User.findOne({'local.username': email}, function(err, user){
         if (err)
           return done(err)
-        if (user){
-          return done(null, false, req.flash('signupMessage', 'That email already taken'))
+        if(user){
+          return done(null, false, req.flash('signupMessage', 'already taken'))
         } else {
           var newUser = new User()
-          newUser.local.email = email
+          newUser.local.username = email
           newUser.local.password = password
 
           newUser.save(function(err){
-            if(err)
-              throw err;
+            if (err)
+              throw err
             return done(null, newUser)
           })
         }
       })
     })
   }
+
   ))
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

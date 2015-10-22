@@ -13,8 +13,8 @@ var passport = require('passport')
 var flash = require('connect-flash')
 
 mongoose.connect(configDB.url)
-
 require('./config/passport')(passport)
+
 
 app.use(morgan('dev'))
 app.use(cookieParser())
@@ -27,7 +27,6 @@ app.use(passport.session())
 app.use(flash())
 
 app.set('view engine', 'ejs')
-
 require('./app/routes.js')(app, passport)
 
 app.listen(3000)
