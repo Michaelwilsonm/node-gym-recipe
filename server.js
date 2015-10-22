@@ -1,6 +1,7 @@
 var http = require('http');
 var express = require('express')
 var app = express()
+var $ = require('jquery')
 
 var cookieParser = require('cookie-parser')
 var session = require('express-session')
