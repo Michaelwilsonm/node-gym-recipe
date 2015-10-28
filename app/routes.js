@@ -8,11 +8,11 @@ module.exports = function(app, passport){
   app.get('/login', function(req, res){
     res.render('login.ejs', { message: req.flash('loginMessage')})
   })
+
   app.post('/login', passport.authenticate('local-login', {
     successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: true
-
   }))
 
   app.get('/signup', function(req, res){
@@ -41,6 +41,17 @@ module.exports = function(app, passport){
   function(req, res) {
     res.redirect('/profile');
   });
+
+  app.get('/recipe', isLoggedIn, function(req, res){
+    res.render('recipe.ejs', { user: req.user })
+  })
+
+  app.post('/recipe' function(req, res){
+    var title = req.body.title
+    var description = req.body.description
+    console.log(description)
+    console.log(title)
+  })
 }
 
 function isLoggedIn(req, res, next) {
