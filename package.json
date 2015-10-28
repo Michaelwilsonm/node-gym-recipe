@@ -4,6 +4,8 @@
   "description": "an app where you can share your gym workouts and vote good workouts up",
   "main": "server.js",
   "scripts": {
+    "build": "browserify server.js -o bundle.js",
+    "watch": "watchify server.js -o bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -18,9 +20,21 @@
   },
   "homepage": "https://github.com/Michaelwilsonm/node-gym-recipe#readme",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "browserify": "^11.2.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "latest",
     "ejs": "latest",
     "express": "^4.13.3",
-    "morgan": "^1.6.1"
+    "express-session": "latest",
+    "jquery": "^2.1.4",
+    "mongoose": "^4.1.12",
+    "morgan": "^1.6.1",
+    "passport": "^0.3.0",
+    "passport-facebook": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "watchify": "^3.4.0",
+    "xcode": "^0.8.2",
+    "xcodebuild": "^1.0.2"
   }
 }
